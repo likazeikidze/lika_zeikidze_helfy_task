@@ -1,12 +1,112 @@
-# React + Vite
+# Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a full-stack Task Manager application built with **React (frontend)** and **Express.js (backend)**.  
+Users can create, view, update, delete, and manage tasks with priority and completion status.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Setup & Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/likazeikidze/lika_zeikidze_helfy_task
+cd lika_zeikidze_helfy_task
+```
+
+---
+
+## Backend Setup
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+Backend runs on:  
+[http://localhost:4000](http://localhost:4000)
+
+---
+
+## Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+Frontend runs on:  
+[http://localhost:3000](http://localhost:3000)
+
+---
+
+## API Documentation
+
+Base URL:  
+[http://localhost:4000/api/tasks](http://localhost:4000/api/tasks)
+
+### Endpoints
+
+- GET /api/tasks
+- POST /api/tasks
+- PUT /api/tasks/:id
+- DELETE /api/tasks/:id
+- PATCH /api/tasks/:id/toggle
+
+---
+
+## Task Model
+
+```js
+{
+  id: number,
+  title: string,
+  description: string,
+  completed: boolean,
+  createdAt: Date,
+  priority: "low" | "medium" | "high"
+}
+
+```
+
+---
+
+## Features
+
+- Full CRUD functionality for tasks
+- Task prioritization (Low, Medium, High)
+- Mark tasks as completed or pending
+- Filter tasks (All / Completed / Pending)
+- Inline task editing
+- Infinite carousel UI for task visualization
+- Responsive UI with loading and error states
+
+## Assumptions & Design Decisions
+
+- Data is stored in-memory (no database required)
+- Simple prompt-based editing used for quick user interaction
+- Carousel implemented using CSS animation (no external libraries)
+- Tasks are duplicated internally only for carousel rendering purposes (to enable smooth infinite scrolling)
+- Focused on core functionality before applying styling
+
+## Time Spent
+
+- Backend: ~1.5 hours
+- Frontend logic: ~2 hours
+- Carousel & styling: ~1–1.5 hours
+- Debugging & polishing: ~1 hour
+  **Total: ~5–6 hours**
+
+## Screenshots
+
+### Add Task Form
+
+![Add Task Form](./screenshots/task-manager.png)
+
+### Tasks Carousel
+
+![Tasks Carousel](./screenshots/carousel.png)
