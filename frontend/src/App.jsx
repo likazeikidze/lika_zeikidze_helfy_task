@@ -30,8 +30,15 @@ const App = () => {
   };
 
   const handleDelete = async (taskId) => {
+    const isConfirmed = window.confirm(
+      "Are you sure you want to delete this task?",
+    );
+
+    if (!isConfirmed) return;
+
     try {
       await deleteTask(taskId);
+
       setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
     } catch (error) {
       console.error("Error deleting task:", error);
