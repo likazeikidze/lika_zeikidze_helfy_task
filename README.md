@@ -99,14 +99,9 @@ Base URL:
 - Frontend logic: ~2 hours
 - Carousel & styling: ~1–1.5 hours
 - Debugging & polishing: ~1 hour
+
   **Total: ~5–6 hours**
 
-## Screenshots
+## Screenshot
 
-### Add Task Form
-
-![Add Task Form](./screenshots/task-manager.png)
-
-### Tasks Carousel
-
-![Tasks Carousel](./screenshots/carousel.png)
+![Task Manager UI](./screenshots/task-manager.png)
