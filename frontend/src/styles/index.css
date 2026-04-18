@@ -252,11 +252,112 @@ select {
 }
 
 @media (max-width: 768px) {
+  .app {
+    padding: 20px 12px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
   .carousel-slide {
-    flex: 0 0 280px;
+    flex: 0 0 220px;
   }
 
   .header h1 {
     font-size: 1.6rem;
+  }
+
+  .task-form {
+    padding: 16px;
+  }
+
+  .task-form input,
+  .task-form textarea,
+  .task-form select,
+  .task-form button {
+    font-size: 16px;
+  }
+
+  .filter {
+    gap: 8px;
+  }
+
+  .filter button {
+    padding: 8px 12px;
+  }
+
+  .carousel-wrapper {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 220px;
+  }
+
+  .task-card {
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .task-card h3 {
+    font-size: 1rem;
+  }
+
+  .task-card p,
+  .task-date {
+    font-size: 0.95rem;
+  }
+
+  .task-actions {
+    gap: 6px;
+  }
+
+  .task-actions button {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 16px 10px;
+  }
+
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .task-form {
+    padding: 12px;
+  }
+  .task-form h2,
+  .task-list h2 {
+    font-size: 1.2rem;
+  }
+
+  .filter {
+    flex-wrap: wrap;
+  }
+  .filter button {
+    font-size: 0.9rem;
+  }
+
+  .carousel-slide {
+    flex: 0 0 200px;
+  }
+  .task-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-actions button {
+    width: 100%;
   }
 }

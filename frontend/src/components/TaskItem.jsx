@@ -1,4 +1,6 @@
-const TaskItem = ({ task, onToggle, onDelete, onEdit }) => {
+import { memo } from "react";
+
+const TaskItem = memo(({ task, onToggle, onDelete, onEdit }) => {
   const handleEdit = () => {
     const updatedTitle = prompt("Enter new task title:", task.title);
     if (updatedTitle === null) return;
@@ -60,6 +62,6 @@ const TaskItem = ({ task, onToggle, onDelete, onEdit }) => {
       </div>
     </li>
   );
-};
+});
 
 export default TaskItem;

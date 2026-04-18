@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import TaskItem from "./TaskItem";
 
 const TaskList = ({ tasks, onToggle, onDelete, onEdit }) => {
@@ -6,8 +7,11 @@ const TaskList = ({ tasks, onToggle, onDelete, onEdit }) => {
   }
 
   // skip duplication for small lists to prevent visible repetition
-  const carouselTasks = tasks.length > 3 ? [...tasks, ...tasks] : tasks;
-  const duration = Math.max(tasks.length * 2, 6);
+  const carouselTasks = useMemo(
+    () => (tasks.length > 3 ? [...tasks, ...tasks] : tasks),
+    [tasks],
+  );
+  const duration = useMemo(() => Math.max(tasks.length * 2, 6), [tasks.length]);
 
   return (
     <div className="task-list">
