@@ -30,3 +30,33 @@ export async function deleteTask(taskId) {
 
   return response.json();
 }
+
+export async function createTask(taskData) {
+  const response = await fetch(URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(taskData),
+  });
+  if (!response.ok) {
+    throw new Error("Failed to create task");
+  }
+
+  return response.json();
+}
+
+export async function updateTask(taskId, updatedData) {
+  const response = await fetch(`${URL}/${taskId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatedData),
+  });
+  if (!response.ok) {
+    throw new Error("Failed to update task");
+  }
+
+  return response.json();
+}
